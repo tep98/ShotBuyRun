@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
             TurnPlayer();
         }
 
-        if(moveVector.x != 0)
+        if(moveVector.x != 0 || moveVector.y != 0)
         {
             anim.SetBool("isRunning", true);
         }
