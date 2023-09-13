@@ -83,7 +83,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -209,9 +209,9 @@ TextureImporter:
       name: MainCharacter_3
       rect:
         serializedVersion: 2
-        x: 2
+        x: 1
         y: 18
-        width: 11
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 57f652dbaeb2c584398db954b6450d1f
+    spriteID: 2d6fd9c413becae46bbbfd02b71cb6d0
     internalID: 0
     vertices: []
     indices: 
