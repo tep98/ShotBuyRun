@@ -19,7 +19,6 @@ public class Gun : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + offset);
-        Debug.Log(rotationZ);
 
         if ((-70 < rotationZ && rotationZ < 70 || rotationZ < 70 && rotationZ > -70) && gunTurnLeft)
         {
