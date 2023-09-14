@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2236951247514944162}
   - component: {fileID: -1026120521031256447}
   - component: {fileID: 2890039037877737484}
+  - component: {fileID: -97615805508456245}
   - component: {fileID: -3728162254276095806}
   m_Layer: 0
   m_Name: Pillager
@@ -217,6 +218,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-97615805508456245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779342507800977542}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cadae21514b514a8bb61ef595456ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 0
 --- !u!114 &-3728162254276095806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +246,19 @@ MonoBehaviour:
   _maxHP: 20
   Die:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -97615805508456245}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   HpChaged:
     m_PersistentCalls:
       m_Calls: []

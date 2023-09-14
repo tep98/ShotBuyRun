@@ -2517,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7701d9970963a45809febfe4725848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHP: 15
+  _maxHP: 1500
   Die:
     m_PersistentCalls:
       m_Calls:
@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 25
 --- !u!1 &1006512475
 GameObject:
   m_ObjectHideFlags: 0
