@@ -21,11 +21,11 @@ public class Gun : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + offset);
         Debug.Log(rotationZ);
 
-        if ((-90 < rotationZ && rotationZ < 90|| rotationZ < 90 && rotationZ > -90) && gunTurnLeft)
+        if ((-70 < rotationZ && rotationZ < 70 || rotationZ < 70 && rotationZ > -70) && gunTurnLeft)
         {
             GeneralTurnGun();
         }
-        else if ((-90 > rotationZ || rotationZ > 90) && !gunTurnLeft)
+        else if ((-110 > rotationZ || rotationZ > 110) && !gunTurnLeft)
         {
             GeneralTurnGun();
         }
@@ -35,6 +35,7 @@ public class Gun : MonoBehaviour
     {
         gunTurnLeft = !gunTurnLeft;
         Controller.TurnPlayer();
+
     }
 
 }
