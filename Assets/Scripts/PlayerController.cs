@@ -8,9 +8,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 moveVector;
 
-    private bool facingLeft = true;
+    public bool facingLeft = true;
     private Animator anim;
     public GameObject animationObject;
+    public bool playerIsRunning = false;
+
+    private Gun GunManager;
+    private bool gunTurnLeft;
 
     private void Start()
     {
@@ -20,15 +24,18 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        GunManager = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Gun>();
+        gunTurnLeft = GunManager.gunTurnLeft;
+
         moveVector.x = Input.GetAxis("Horizontal");
         moveVector.y = Input.GetAxis("Vertical");
         rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
 
-        if(facingLeft && moveVector.x > 0)
+        if(facingLeft && moveVector.x > 0 && !gunTurnLeft)
         {
             TurnPlayer();
         }
-        else if(!facingLeft && moveVector.x < 0)
+        else if(!facingLeft && moveVector.x < 0 && gunTurnLeft)
         {
             TurnPlayer();
         }
@@ -36,10 +43,12 @@ public class PlayerController : MonoBehaviour
         if(moveVector.x != 0 || moveVector.y != 0)
         {
             anim.SetBool("isRunning", true);
+            playerIsRunning = true;
         }
         else
         {
             anim.SetBool("isRunning", false);
+            playerIsRunning = false;
         }
     }
 
