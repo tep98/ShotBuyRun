@@ -1355,7 +1355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0be6141a1522654ebe02872e2ab39df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: []
+  enemy:
+  - {fileID: 5779342507800977542, guid: 4d12e5ec87f076e45a7545420e129f87, type: 3}
   spawnPoint:
   - {fileID: 93625928}
   - {fileID: 910884115}
