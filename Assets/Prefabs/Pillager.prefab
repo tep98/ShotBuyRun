@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac51245b59dca6743a07c9cd023cb586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 2
   target: {fileID: 0}
 --- !u!50 &2236951247514944162
 Rigidbody2D:
@@ -266,6 +266,7 @@ MonoBehaviour:
   HpChagedPercent:
     m_PersistentCalls:
       m_Calls: []
+  panel: {fileID: 0}
 --- !u!95 &1910428277983255223
 Animator:
   serializedVersion: 7

@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     private UnityEvent<float> HpChagedPercent;
 
+    public GameObject panel;
 
     private float _hp;
 
@@ -27,8 +28,11 @@ public class Health : MonoBehaviour
             _hp = value;
             HpChaged?.Invoke(_hp);
             HpChagedPercent?.Invoke(_hp/_maxHP);
-            if(_hp<=0)
+            if (_hp <= 0)
+            {
                 Die?.Invoke();
+                panel.SetActive(true);
+            }
         }
     }
 
