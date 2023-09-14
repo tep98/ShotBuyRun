@@ -2290,6 +2290,9 @@ GameObject:
   - component: {fileID: 993430452}
   - component: {fileID: 993430451}
   - component: {fileID: 993430450}
+  - component: {fileID: 993430455}
+  - component: {fileID: 993430454}
+  - component: {fileID: 993430453}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -2400,6 +2403,92 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9041927, y: 1.5086706}
   m_EdgeRadius: 0
+--- !u!114 &993430453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993430448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7701d9970963a45809febfe4725848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHP: 15
+  Die:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 993430448}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  HpChaged:
+    m_PersistentCalls:
+      m_Calls: []
+  HpChagedPercent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_fillAmount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &993430454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993430448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df48f2f40757965458fa8d65212431b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageGot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 993430453}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: GetDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &993430455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993430448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &1006512475
 GameObject:
   m_ObjectHideFlags: 0

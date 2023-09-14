@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public float speed = 3;
     public Transform target;
     void Start()
@@ -12,8 +11,8 @@ public class EnemyFollow : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    private void FixedUpdate()
+    void Update()
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime); 
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); 
         }
 }
