@@ -13,12 +13,10 @@ GameObject:
   - component: {fileID: -7122223614869550772}
   - component: {fileID: 6814145982353307362}
   - component: {fileID: 2236951247514944162}
-  - component: {fileID: -1026120521031256447}
-  - component: {fileID: 2890039037877737484}
-  - component: {fileID: -97615805508456245}
-  - component: {fileID: -3728162254276095806}
   - component: {fileID: 1910428277983255223}
   - component: {fileID: 5884110808799385889}
+  - component: {fileID: 5081508654617089063}
+  - component: {fileID: -1026120521031256447}
   m_Layer: 0
   m_Name: Pillager
   m_TagString: Untagged
@@ -180,94 +178,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-1026120521031256447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779342507800977542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 2
---- !u!114 &2890039037877737484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779342507800977542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df48f2f40757965458fa8d65212431b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageGot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -3728162254276095806}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: GetDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-97615805508456245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779342507800977542}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54cadae21514b514a8bb61ef595456ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 0
---- !u!114 &-3728162254276095806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779342507800977542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7701d9970963a45809febfe4725848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHP: 20
-  Die:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -97615805508456245}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  HpChaged:
-    m_PersistentCalls:
-      m_Calls: []
-  HpChagedPercent:
-    m_PersistentCalls:
-      m_Calls: []
-  panel: {fileID: 0}
 --- !u!95 &1910428277983255223
 Animator:
   serializedVersion: 7
@@ -336,3 +246,29 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.82080173, y: 0.3844757}
   m_EdgeRadius: 0
+--- !u!114 &5081508654617089063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779342507800977542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f820a8900309348be0488524fc2fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!114 &-1026120521031256447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779342507800977542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 2
