@@ -796,6 +796,7 @@ GameObject:
   - component: {fileID: 262566802}
   - component: {fileID: 262566803}
   - component: {fileID: 262566804}
+  - component: {fileID: 262566805}
   m_Layer: 0
   m_Name: revolver_0
   m_TagString: Weapon
@@ -886,6 +887,20 @@ MonoBehaviour:
   offset: 180
   gunTurnLeft: 1
   target: {fileID: 262566802}
+--- !u!114 &262566805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262566801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31e5d07db3645b418c24535f0d87410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1789205036}
+  bullet: {fileID: 2701984058629487701, guid: 20e96a5e9f7f5f0498013f0b4143f80e, type: 3}
 --- !u!1 &276142764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,7 +2670,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993430448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
   m_Name: 
