@@ -6,10 +6,19 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bullet;
+
+    public Animator gunAnim;
+
+    private void Start()
+    {
+        gunAnim = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Fire1")) //Key Handler
         {
+            gunAnim.SetTrigger("revolverShoot");
             Shoot();
         }
     }
