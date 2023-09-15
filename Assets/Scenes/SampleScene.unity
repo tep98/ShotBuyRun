@@ -1642,6 +1642,8 @@ MonoBehaviour:
   - {fileID: 937935277}
   - {fileID: 462932925}
   startTimeBtwSpawns: 8
+  timeBtwSpawns: 0
+  minTimeBtwSpawns: 2
 --- !u!1 &772166701
 GameObject:
   m_ObjectHideFlags: 0
