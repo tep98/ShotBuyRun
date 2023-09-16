@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDie : MonoBehaviour
 {
     public float lifetime = 0;
-    void Start()
+    public void Start()
     {
         Destroy(gameObject, lifetime);      
     }

@@ -175,3 +175,4 @@ MonoBehaviour:
   speed: 20
   damage: 20
   rb: {fileID: -1817217363348635361}
+  bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}

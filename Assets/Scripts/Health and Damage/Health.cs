@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     private UnityEvent<float> HpChagedPercent;
 
     public GameObject panel;
+    public GameObject gameplayUI;
 
     private float _hp;
 
@@ -32,6 +33,7 @@ public class Health : MonoBehaviour
             {
                 Die?.Invoke();
                 panel.SetActive(true);
+                gameplayUI.SetActive(false);
             }
         }
     }
