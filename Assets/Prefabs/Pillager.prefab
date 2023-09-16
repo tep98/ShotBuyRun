@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -1026120521031256447}
   m_Layer: 0
   m_Name: Pillager
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  minSpeed: 0
   target: {fileID: 0}
 --- !u!50 &2236951247514944162
 Rigidbody2D:

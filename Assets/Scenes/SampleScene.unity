@@ -1678,6 +1678,8 @@ MonoBehaviour:
   - {fileID: 937935277}
   - {fileID: 462932925}
   startTimeBtwSpawns: 8
+  timeBtwSpawns: 0
+  minTimeBtwSpawns: 2
 --- !u!1 &772166701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,7 +1737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 834441552, guid: dc54b53c96042334887a9d50675af47a, type: 3}
+  m_Sprite: {fileID: 210821661, guid: 925914de2f9887b459cd6f25cd29b301, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3673,7 +3675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -902086654454736923, guid: dc54b53c96042334887a9d50675af47a, type: 3}
+  m_Sprite: {fileID: -693420466747759191, guid: 925914de2f9887b459cd6f25cd29b301, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
