@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public float speed = 3;
+    private Spawner SpawnerFollowController;
+    public float new_speed;
     public Transform target;
     private bool enemyFacingLeft;
     
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        SpawnerFollowController = GameObject.Find("SpawnArea").GetComponent<Spawner>();
+        new_speed = SpawnerFollowController.speed; 
     }
-
+        
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); 
+        transform.position = Vector2.MoveTowards(transform.position, target.position, new_speed * Time.deltaTime); 
 
         if ((transform.position.x < target.position.x) && !enemyFacingLeft)
         {

@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     public float startTimeBtwSpawns;
     public float timeBtwSpawns;
     public float minTimeBtwSpawns;
+    public float speed = 3;
 
     void Start()
     {
@@ -26,7 +27,8 @@ public class Spawner : MonoBehaviour
             randPosition = Random.Range(0, spawnPoint.Length);
             Instantiate(enemy[rand], spawnPoint[randPosition].transform.position, Quaternion.identity);
             if (startTimeBtwSpawns >= minTimeBtwSpawns){
-                startTimeBtwSpawns -= 0.1f;
+                startTimeBtwSpawns -= 0.25f;
+                speed += 0.01f;
             }
             timeBtwSpawns = startTimeBtwSpawns;
         }
