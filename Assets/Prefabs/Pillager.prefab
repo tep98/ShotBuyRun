@@ -280,6 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   target: {fileID: 0}
+  startTimeBtwSpawns: 8
+  timeBtwSpawns: 0
+  minTimeBtwSpawns: 2
 --- !u!50 &2236951247514944162
 Rigidbody2D:
   serializedVersion: 4
