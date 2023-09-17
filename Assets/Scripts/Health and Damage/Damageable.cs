@@ -10,6 +10,10 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     private UnityEvent<float> DamageGot;
 
+    public GameObject takeDamageSound;
+
+    public GameObject bulletHitEffect;
+
     private void Start()
     {
         playerSpriteRenderer = playerSprite.GetComponent<Renderer>();
@@ -22,6 +26,9 @@ public class Damageable : MonoBehaviour
             DamageGot?.Invoke(attacksystem.Damage);
             playerSpriteRenderer.material.SetColor("_Color", new Color(200/255.0f, 83/255.0f, 83/255.0f));
             Invoke("SetDefaultColor", 0.2f);
+
+            Instantiate(takeDamageSound, transform.position, Quaternion.identity);
+            Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
         }
     }
 

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 36497265}
   - component: {fileID: 36497266}
   m_Layer: 0
-  m_Name: Step
+  m_Name: StepSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,11 +162,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4188390507466440486, guid: 72084b07efa35f34cbdf4fbd88c2165b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fd7a94d83bebcdc4da2cfa990b5cec1b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8918712e2fccb6840ae73871177c4a9f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.427
+  m_Pitch: 0.92
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1556,10 +1556,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4188390507466440486, guid: 72084b07efa35f34cbdf4fbd88c2165b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 533c39c1d2e2c694b819079849dee935, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7daf5af59d97cdb4d9ffe4d91d123b07, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 2.2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3141,7 +3141,7 @@ MonoBehaviour:
   facingLeft: 1
   animationObject: {fileID: 1178544625}
   playerIsRunning: 0
-  Step: {fileID: 36497266}
+  step: {fileID: 36497266}
 --- !u!50 &993430451
 Rigidbody2D:
   serializedVersion: 4
@@ -3291,6 +3291,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  takeDamageSound: {fileID: 7282389238257341183, guid: 3d30ca494c0f71f4292bff4bce3d5458, type: 3}
+  bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}
 --- !u!114 &993430455
 MonoBehaviour:
   m_ObjectHideFlags: 0

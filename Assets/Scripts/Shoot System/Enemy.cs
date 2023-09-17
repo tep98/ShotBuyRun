@@ -5,12 +5,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
-    public AudioSource DamageSound;
+    public GameObject[] damageSounds;
+
+    private Renderer PillagerSpriteRenderer;
+
+    private void Start()
+    {
+        PillagerSpriteRenderer = GetComponent<Renderer>();
+    }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        DamageSound.Play();
+
+        int randSound = Random.Range(0, damageSounds.Length);
+        Instantiate(damageSounds[randSound], transform.position, Quaternion.identity);
+        Destroy(damageSounds[randSound]);
+
+        PillagerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 183 / 255.0f, 183 / 255.0f));
+        Invoke("SetDefaultColor", 0.2f);
+
 
         if (health <= 0)
         {
@@ -21,5 +35,10 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void SetDefaultColor()
+    {
+        PillagerSpriteRenderer.material.SetColor("_Color", Color.white);
     }
 }

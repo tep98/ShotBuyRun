@@ -388,7 +388,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  DamageSound: {fileID: 2152435456716623504}
+  damageSounds:
+  - {fileID: 6292427490218256644, guid: e1d57c75a63376240b4468f0f0a62ff4, type: 3}
+  - {fileID: 7510801079434912836, guid: 5b19437fbd3c82c4984617a50fd70d36, type: 3}
+  - {fileID: 5902724128521188113, guid: 9f694937f4518634497d2cc079e26e3f, type: 3}
+  - {fileID: 6933134580361377682, guid: 9d2c737ece6e56547a22c2c25df081de, type: 3}
 --- !u!114 &-1026120521031256447
 MonoBehaviour:
   m_ObjectHideFlags: 0

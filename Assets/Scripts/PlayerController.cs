@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Gun GunManager;
     private bool gunTurnLeft;
 
-    public AudioSource Step;
+    public AudioSource step;
 
     private void Start()
     {
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isRunning", false);
             playerIsRunning = false;
+            step.Play();
         }
     }
 
