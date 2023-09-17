@@ -6,6 +6,8 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bullet;
+    
+    public AudioSource ShootSound;
 
     public Animator gunAnim;
 
@@ -20,6 +22,7 @@ public class Weapon : MonoBehaviour
         {
             gunAnim.SetTrigger("revolverShoot");
             Shoot();
+            ShootSound.Play();
         }
     }
 

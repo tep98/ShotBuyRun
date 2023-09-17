@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Gun GunManager;
     private bool gunTurnLeft;
 
+    public AudioSource Step;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
