@@ -9,28 +9,27 @@ public class Spawner : MonoBehaviour
 
     private int rand;
     private int randPosition;
-    public float startTimeBtwSpawns;
+    private WavesManager timeController;
+    public float newStartTimeBtwSpawns = 8;
     public float timeBtwSpawns;
     public float minTimeBtwSpawns;
-    public float speed = 3;
 
     void Start()
     {
-        timeBtwSpawns = startTimeBtwSpawns;
+        timeBtwSpawns = newStartTimeBtwSpawns;
     }
 
     void Update()
     {
+        timeController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
+        newStartTimeBtwSpawns = timeController.startTimeBtwSpawns; 
+
         if(timeBtwSpawns <= 0)
         {
             rand = Random.Range(0, enemy.Length);
             randPosition = Random.Range(0, spawnPoint.Length);
             Instantiate(enemy[rand], spawnPoint[randPosition].transform.position, Quaternion.identity);
-            if (startTimeBtwSpawns >= minTimeBtwSpawns){
-                startTimeBtwSpawns -= 0.25f;
-                speed += 0.01f;
-            }
-            timeBtwSpawns = startTimeBtwSpawns;
+            timeBtwSpawns = newStartTimeBtwSpawns;
         }
         else
         {

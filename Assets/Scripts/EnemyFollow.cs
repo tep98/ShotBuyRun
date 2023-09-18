@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    private Spawner SpawnerFollowController;
+    private WavesManager speedController;
     public float new_speed;
     public Transform target;
     private bool enemyFacingLeft;
@@ -12,8 +12,9 @@ public class EnemyFollow : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        SpawnerFollowController = GameObject.Find("SpawnArea").GetComponent<Spawner>();
-        new_speed = SpawnerFollowController.speed; 
+        
+        speedController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
+        new_speed = speedController.speed; 
     }
         
     private void Update()
