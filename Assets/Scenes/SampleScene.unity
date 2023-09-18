@@ -1984,6 +1984,7 @@ MonoBehaviour:
   newStartTimeBtwSpawns: 8
   timeBtwSpawns: 0
   minTimeBtwSpawns: 2
+  speed: 3
 --- !u!1 &772166701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,6 +3341,7 @@ MonoBehaviour:
         m_CallState: 2
   takeDamageSound: {fileID: 7282389238257341183, guid: 3d30ca494c0f71f4292bff4bce3d5458, type: 3}
   bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}
+  startTimeBtwDamage: 2
 --- !u!114 &993430455
 MonoBehaviour:
   m_ObjectHideFlags: 0
