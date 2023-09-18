@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WavesManager : MonoBehaviour
 {
-    public float speed = 3;
-    public float startTimeBtwSpawns = 8;
-    private int currentWave;
+    public float speed;
+    public GameObject Spawner;
+    public Text currentWaveUI;
+    public float waveTimeBtwSpawns;
+    public float waveMinTimeBtwSpawns;
+    private int currentWave = 1;
     private float timer;
-    public float timeBtwTimer = 60;
+    public float waveTime;
+    public float timeOutTime;
+    public float percent;
 
 
     void Start()
     {
-        timer = timeBtwTimer;
+        timer = waveTime + timeOutTime;
     }
 
     void Update()
@@ -21,13 +27,22 @@ public class WavesManager : MonoBehaviour
         if (timer <= 0)
         {
             currentWave += 1;
-            startTimeBtwSpawns -= 0.25f;
+            currentWaveUI.text = currentWave.ToString();
+            waveTimeBtwSpawns = waveTimeBtwSpawns/100*(100-percent);
+            waveMinTimeBtwSpawns = waveMinTimeBtwSpawns/100*(100-percent);
             speed += 0.05f;
-            timer = timeBtwTimer;
+            timer = waveTime + timeOutTime;
+            Spawner.SetActive(false);
+            Invoke("SpawnerActive", timeOutTime);
         }
         else
         {
             timer -= Time.deltaTime;
         }
+    }
+
+    private void SpawnerActive()
+    {
+        Spawner.SetActive(true);
     }
 }
