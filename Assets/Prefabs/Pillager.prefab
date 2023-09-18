@@ -278,11 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac51245b59dca6743a07c9cd023cb586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  new_speed: 0
   target: {fileID: 0}
-  startTimeBtwSpawns: 8
-  timeBtwSpawns: 0
-  minTimeBtwSpawns: 2
 --- !u!50 &2236951247514944162
 Rigidbody2D:
   serializedVersion: 4
@@ -295,7 +292,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -366,7 +363,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13440943, y: -0.6077622}
+  m_Offset: {x: 0.15833426, y: -0.5701656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -376,7 +373,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.82080173, y: 0.3844757}
+  m_Size: {x: 0.52686405, y: 0.459669}
   m_EdgeRadius: 0
 --- !u!114 &5081508654617089063
 MonoBehaviour:

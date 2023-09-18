@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
             Instantiate(enemy[rand], spawnPoint[randPosition].transform.position, Quaternion.identity);
             if (startTimeBtwSpawns >= minTimeBtwSpawns){
                 startTimeBtwSpawns -= 0.25f;
-                speed += 0.01f;
+                speed += 0.05f;
             }
             timeBtwSpawns = startTimeBtwSpawns;
         }
