@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public GameObject bullet;
     
     public AudioSource ShootSound;
+    public ParticleSystem ShootParticles;
 
     public Animator gunAnim;
 
@@ -22,12 +23,13 @@ public class Weapon : MonoBehaviour
         {
             gunAnim.SetTrigger("revolverShoot");
             Shoot();
-            ShootSound.Play();
         }
     }
 
     private void Shoot() //Shooting Logic
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
+        ShootSound.Play();
+        ShootParticles.Play();
     }
 }
