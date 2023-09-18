@@ -17,15 +17,21 @@ public class Damageable : MonoBehaviour
     public float startTimeBtwDamage;
     private float timeBtwDamage;
 
+    public GameObject HeartUI;
+    private Animator HeartAnim;
+
 
     private void Start()
     {
         playerSpriteRenderer = playerSprite.GetComponent<Renderer>();
         timeBtwDamage = startTimeBtwDamage;
-        
+        HeartAnim = HeartUI.GetComponent<Animator>();
     }
 
+    private void Update()
+    {
 
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -65,6 +71,8 @@ public class Damageable : MonoBehaviour
 
             Instantiate(takeDamageSound, transform.position, Quaternion.identity);
             Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
+
+            HeartAnim.SetTrigger("takeDamage");
         }
     } 
 

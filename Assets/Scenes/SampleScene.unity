@@ -913,10 +913,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 283147214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 410, y: 213}
-  m_SizeDelta: {x: 47.1475, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -37.4, y: -40.7}
+  m_SizeDelta: {x: 47.147522, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255449455
 MonoBehaviour:
@@ -3427,6 +3427,7 @@ MonoBehaviour:
   takeDamageSound: {fileID: 7282389238257341183, guid: 3d30ca494c0f71f4292bff4bce3d5458, type: 3}
   bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}
   startTimeBtwDamage: 1
+  HeartUI: {fileID: 1047136073}
 --- !u!114 &993430455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,6 +4025,7 @@ GameObject:
   - component: {fileID: 1047136074}
   - component: {fileID: 1047136076}
   - component: {fileID: 1047136075}
+  - component: {fileID: 1047136077}
   m_Layer: 5
   m_Name: HP_Bar
   m_TagString: Untagged
@@ -4089,6 +4091,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047136073}
   m_CullTransparentMesh: 1
+--- !u!95 &1047136077
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047136073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e9435ed2efa369b4ea21b0405dee7e92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1089984731
 GameObject:
   m_ObjectHideFlags: 0
