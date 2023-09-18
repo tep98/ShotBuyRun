@@ -27,12 +27,12 @@ public class Damageable : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         DamageFunction(other);
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (timeBtwDamage <= 0)
         {
@@ -45,18 +45,18 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.collider.TryGetComponent<AttackSystem>(out var attacksystem))
+        if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
         {
             timeBtwDamage = startTimeBtwDamage;
         }
     }
 
 
-    public void DamageFunction(Collision2D other)
+    public void DamageFunction(Collider2D other)
     {
-        if (other.collider.TryGetComponent<AttackSystem>(out var attacksystem))
+        if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
         {
             DamageGot?.Invoke(attacksystem.Damage);
 
