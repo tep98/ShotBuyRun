@@ -60,7 +60,7 @@ public class Damageable : MonoBehaviour
         if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
         {
             timeBtwDamage = startTimeBtwDamage;
-            Invoke("SetIsExit", startTimeBtwDamage/1.5f);
+            
         }
     }
 

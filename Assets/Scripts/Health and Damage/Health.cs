@@ -30,12 +30,6 @@ public class Health : MonoBehaviour
             _hp = value;
             HpChaged?.Invoke(_hp);
             HpChagedPercent?.Invoke(_hp/_maxHP);
-            if (_hp <= 0)
-            {
-                Die?.Invoke();
-                panel.SetActive(true);
-                gameplayUI.SetActive(false);
-            }
         }
     }
 
@@ -58,4 +52,10 @@ public class Health : MonoBehaviour
     {
         HP+=hp;
     } 
+    public void KillMC()
+    {
+        Die?.Invoke();
+        panel.SetActive(true);
+        gameplayUI.SetActive(false);
+    }
 }
