@@ -20,17 +20,28 @@ public class Damageable : MonoBehaviour
     public GameObject HeartUI;
     private Animator HeartAnim;
 
+    private float hp;
+    private float maxHP;
 
     private void Start()
     {
         playerSpriteRenderer = playerSprite.GetComponent<Renderer>();
         timeBtwDamage = startTimeBtwDamage;
         HeartAnim = HeartUI.GetComponent<Animator>();
+        maxHP = GetComponent<Health>().HP;
     }
 
     private void Update()
     {
-
+        hp = GetComponent<Health>()._hp;
+        if (hp < (maxHP / 2))
+        {
+            HeartAnim.SetBool("lowHP", true);
+        }
+        else
+        {
+            HeartAnim.SetBool("lowHP", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     public GameObject gameplayUI;
 
 
-    private float _hp;
+    public float _hp;
 
     public float HP
     {
