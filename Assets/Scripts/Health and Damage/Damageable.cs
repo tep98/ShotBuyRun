@@ -57,36 +57,44 @@ public class Damageable : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
+        BoxCollider2D boxCollider = other.GetComponent<BoxCollider2D>();
+        if (boxCollider != null)
         {
-            timeBtwDamage = startTimeBtwDamage;
-            
+            if (boxCollider.TryGetComponent<AttackSystem>(out var attackSystem))
+            {
+                timeBtwDamage = startTimeBtwDamage;
+                Invoke("SetIsExit", startTimeBtwDamage / 1.5f);
+            }
         }
     }
 
 
     public void DamageFunction(Collider2D other)
     {
-        if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
+        BoxCollider2D boxCollider = other.GetComponent<BoxCollider2D>();
+        if (boxCollider != null)
         {
-            DamageGot?.Invoke(attacksystem.Damage);
-
-            playerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 83 / 255.0f, 83 / 255.0f));
-            Invoke("SetDefaultColor", 0.2f);
-
-            Instantiate(takeDamageSound, transform.position, Quaternion.identity);
-            Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
-
-            HeartAnim.SetTrigger("takeDamage");
-
-            hp = GetComponent<Health>()._hp;
-            if (hp < (maxHP / 2))
+            if (boxCollider.TryGetComponent<AttackSystem>(out var attacksystem))
             {
-                HeartAnim.SetBool("lowHP", true);
-            }
-            else
-            {
-                HeartAnim.SetBool("lowHP", false);
+                DamageGot?.Invoke(attacksystem.Damage);
+
+                playerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 83 / 255.0f, 83 / 255.0f));
+                Invoke("SetDefaultColor", 0.2f);
+
+                Instantiate(takeDamageSound, transform.position, Quaternion.identity);
+                Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
+
+                HeartAnim.SetTrigger("takeDamage");
+
+                hp = GetComponent<Health>()._hp;
+                if (hp < (maxHP / 2))
+                {
+                    HeartAnim.SetBool("lowHP", true);
+                }
+                else
+                {
+                    HeartAnim.SetBool("lowHP", false);
+                }
             }
         }
     } 
