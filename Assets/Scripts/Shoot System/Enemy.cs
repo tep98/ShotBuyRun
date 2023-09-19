@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
+    public WavesManager WavesManagerController;
     public GameObject[] damageSounds;
 
     private Renderer PillagerSpriteRenderer;
@@ -12,6 +13,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         PillagerSpriteRenderer = GetComponent<Renderer>();
+        WavesManagerController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
     }
 
     public void TakeDamage(int damage)
@@ -28,12 +30,14 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            
             Die();
         }
     }
 
     private void Die()
     {
+        WavesManagerController.ExtendKillCounter();
         Destroy(gameObject);
     }
 

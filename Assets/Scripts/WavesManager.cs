@@ -15,6 +15,7 @@ public class WavesManager : MonoBehaviour
     public float waveTime;
     public float timeOutTime;
     public float percent;
+    public int killCount = 0;
 
 
     void Start()
@@ -39,6 +40,11 @@ public class WavesManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+    }
+
+    public void ExtendKillCounter()
+    {
+        killCount++;
     }
 
     private void SpawnerActive()

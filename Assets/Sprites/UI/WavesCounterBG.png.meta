@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3373a70dc1f2c4c4a9ee77535e0441a0
+guid: e8a16a55596d7284f89e398f5e4fbb3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 649223268058989734
-    second: Button_0
+      213: 6252983019593510473
+    second: WavesCounterBG_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -146,13 +146,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button_0
+      name: WavesCounterBG_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 42
-        height: 16
+        width: 32
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a403906f11820900800000000000000
-      internalID: 649223268058989734
+      spriteID: 94eab653dee07c650800000000000000
+      internalID: 6252983019593510473
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Button_0: 649223268058989734
+      WavesCounterBG_0: 6252983019593510473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
