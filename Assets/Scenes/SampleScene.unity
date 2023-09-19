@@ -3396,6 +3396,7 @@ MonoBehaviour:
         m_CallState: 2
   panel: {fileID: 1101663068}
   gameplayUI: {fileID: 283147213}
+  _hp: 0
 --- !u!114 &993430454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,6 +3429,7 @@ MonoBehaviour:
   bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}
   startTimeBtwDamage: 1
   HeartUI: {fileID: 1047136073}
+  isExit: 1
 --- !u!114 &993430455
 MonoBehaviour:
   m_ObjectHideFlags: 0

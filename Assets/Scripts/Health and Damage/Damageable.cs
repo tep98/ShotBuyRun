@@ -22,6 +22,7 @@ public class Damageable : MonoBehaviour
 
     private float hp;
     private float maxHP;
+    public bool isExit = true;
 
     private void Start()
     {
@@ -31,22 +32,14 @@ public class Damageable : MonoBehaviour
         maxHP = GetComponent<Health>().HP;
     }
 
-    private void Update()
-    {
-        hp = GetComponent<Health>()._hp;
-        if (hp < (maxHP / 2))
-        {
-            HeartAnim.SetBool("lowHP", true);
-        }
-        else
-        {
-            HeartAnim.SetBool("lowHP", false);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        DamageFunction(other);
+        if (isExit)
+        {
+            DamageFunction(other);
+        }
+        isExit = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -67,6 +60,7 @@ public class Damageable : MonoBehaviour
         if (other.GetComponent<BoxCollider2D>().TryGetComponent<AttackSystem>(out var attacksystem))
         {
             timeBtwDamage = startTimeBtwDamage;
+            Invoke("SetIsExit", startTimeBtwDamage/1.5f);
         }
     }
 
@@ -84,11 +78,26 @@ public class Damageable : MonoBehaviour
             Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
 
             HeartAnim.SetTrigger("takeDamage");
+
+            hp = GetComponent<Health>()._hp;
+            if (hp < (maxHP / 2))
+            {
+                HeartAnim.SetBool("lowHP", true);
+            }
+            else
+            {
+                HeartAnim.SetBool("lowHP", false);
+            }
         }
     } 
 
     private void SetDefaultColor()
     {
         playerSpriteRenderer.material.SetColor("_Color", Color.white);
+    }
+
+    private void SetIsExit()
+    {
+        isExit = true;
     }
 }
