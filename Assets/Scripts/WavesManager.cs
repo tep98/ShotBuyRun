@@ -9,7 +9,7 @@ public class WavesManager : MonoBehaviour
     public GameObject Spawner;
     public float waveTimeBtwSpawns;
     public float waveMinTimeBtwSpawns;
-    private int currentWave = 1;
+    public int currentWave = 1;
     private float timer;
     public float waveTime;
     public float timeOutTime;
@@ -18,6 +18,7 @@ public class WavesManager : MonoBehaviour
 
     public Text WaveNotiText;
     public Text currentWaveUI;
+
 
     public Animator WaveNotiAnim;
 
