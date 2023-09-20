@@ -10163,6 +10163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 993430448}
+  spawner: {fileID: 719768447}
+  wavesManager: {fileID: 191322020}
 --- !u!1 &1197645026
 GameObject:
   m_ObjectHideFlags: 0

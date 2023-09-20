@@ -10,6 +10,7 @@ public class DeadAnimationScript : MonoBehaviour
 
     private bool isLive = true;
 
+    public GameObject wavesManager;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class DeadAnimationScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("Weapon").SetActive(false);
             GameObject.Find("StepSound").SetActive(false);
             isLive = false;
+            wavesManager.SetActive(false);
         }
     }
 

@@ -28,7 +28,6 @@ public class Health : MonoBehaviour
     public Text KillStatistic;
 
 
-
     public float _hp;
 
     public float HP
