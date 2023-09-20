@@ -66,11 +66,11 @@ public class Health : MonoBehaviour
     } 
     public void KillMC()
     {
-        KillStatistic.text = "Убийства: " + killStats.ToString();
-        WavesStatistic.text = "Волн пройдено: " + waveStats.ToString();
         Die?.Invoke();
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
+        KillStatistic.text = "Убийства: " + killStats.ToString();
+        WavesStatistic.text = "Волн пройдено: " + waveStats.ToString();
     }
 }

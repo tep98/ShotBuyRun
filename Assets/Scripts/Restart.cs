@@ -5,17 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    private void Start()
-    {
-        Time.timeScale = 0f;
-    }
+    public Animator DeadScreenAnimator;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Time.timeScale = 1f;
+        {        
+            DeadScreenAnimator.SetTrigger("CloseDeadScreen");
         }
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
