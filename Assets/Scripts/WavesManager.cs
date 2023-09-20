@@ -7,7 +7,6 @@ public class WavesManager : MonoBehaviour
 {
     public float speed;
     public GameObject Spawner;
-    public Text currentWaveUI;
     public float waveTimeBtwSpawns;
     public float waveMinTimeBtwSpawns;
     private int currentWave = 1;
@@ -17,6 +16,10 @@ public class WavesManager : MonoBehaviour
     public float percent;
     public int killCount = 0;
 
+    public Text WaveNotiText;
+    public Text currentWaveUI;
+
+    public Animator WaveNotiAnim;
 
     void Start()
     {
@@ -28,12 +31,14 @@ public class WavesManager : MonoBehaviour
         if (timer <= 0)
         {
             currentWave += 1;
-            currentWaveUI.text = currentWave.ToString();
+            WaveNotiText.text = "Волна " + currentWave.ToString();
+            currentWaveUI.text = "Волна " + currentWave.ToString();
             waveTimeBtwSpawns = waveTimeBtwSpawns/100*(100-percent);
             waveMinTimeBtwSpawns = waveMinTimeBtwSpawns/100*(100-percent);
             speed += 0.05f;
             timer = waveTime + timeOutTime;
             Spawner.SetActive(false);
+            WaveNotiAnim.SetBool("ShowWaveNoti", true);
             Invoke("SpawnerActive", timeOutTime);
         }
         else
@@ -50,5 +55,6 @@ public class WavesManager : MonoBehaviour
     private void SpawnerActive()
     {
         Spawner.SetActive(true);
+        WaveNotiAnim.SetBool("ShowWaveNoti", false);
     }
 }

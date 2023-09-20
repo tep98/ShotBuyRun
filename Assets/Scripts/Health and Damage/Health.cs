@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
 
     public GameObject panel;
     public GameObject gameplayUI;
+    public GameObject notiUI;
 
 
     public float _hp;
@@ -57,5 +58,6 @@ public class Health : MonoBehaviour
         Die?.Invoke();
         panel.SetActive(true);
         gameplayUI.SetActive(false);
+        notiUI.SetActive(false);
     }
 }
