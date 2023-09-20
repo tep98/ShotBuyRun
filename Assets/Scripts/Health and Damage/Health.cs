@@ -70,6 +70,9 @@ public class Health : MonoBehaviour
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
+
+        killStats = WavesManagerController.killCount;
+        waveStats = WavesManagerController.currentWave;
         KillStatistic.text = "Убийства: " + killStats.ToString();
         WavesStatistic.text = "Волн пройдено: " + waveStats.ToString();
     }

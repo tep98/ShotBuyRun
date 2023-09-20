@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Restart : MonoBehaviour
 {
     public Animator DeadScreenAnimator;
+    public Button restartButton;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {        
-            DeadScreenAnimator.SetTrigger("CloseDeadScreen");
-        }
+	void Start () {
+		restartButton.onClick.AddListener(TaskOnClick);
+	}
+    public void TaskOnClick()
+    {       
+        DeadScreenAnimator.SetTrigger("CloseDeadScreen");
     }
 
     public void RestartScene()
