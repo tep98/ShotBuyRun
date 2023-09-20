@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -19,6 +20,13 @@ public class Health : MonoBehaviour
     public GameObject panel;
     public GameObject gameplayUI;
     public GameObject notiUI;
+    
+    private WavesManager WavesManagerController;
+    private int killStats;
+    private int waveStats;
+    public Text WavesStatistic;
+    public Text KillStatistic;
+
 
 
     public float _hp;
@@ -37,6 +45,9 @@ public class Health : MonoBehaviour
     private void Start()
     {
         Init();
+        WavesManagerController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
+        killStats = WavesManagerController.killCount;
+        waveStats = WavesManagerController.currentWave;
     }
 
     public void Init()
@@ -55,6 +66,8 @@ public class Health : MonoBehaviour
     } 
     public void KillMC()
     {
+        KillStatistic.text = "Убийства: " + killStats.ToString();
+        WavesStatistic.text = "Волн пройдено: " + waveStats.ToString();
         Die?.Invoke();
         panel.SetActive(true);
         gameplayUI.SetActive(false);
