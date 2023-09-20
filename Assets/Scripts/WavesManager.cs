@@ -31,8 +31,8 @@ public class WavesManager : MonoBehaviour
         if (timer <= 0)
         {
             currentWave += 1;
-            WaveNotiText.text = "Волна " + currentWave.ToString();
-            currentWaveUI.text = "Волна " + currentWave.ToString();
+            WaveNotiText.text = "Р’РѕР»РЅР° " + currentWave.ToString();
+            currentWaveUI.text = "Р’РѕР»РЅР° " + currentWave.ToString();
             waveTimeBtwSpawns = waveTimeBtwSpawns/100*(100-percent);
             waveMinTimeBtwSpawns = waveMinTimeBtwSpawns/100*(100-percent);
             speed += 0.05f;
