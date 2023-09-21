@@ -27,6 +27,8 @@ public class Health : MonoBehaviour
     public Text WavesStatistic;
     public Text KillStatistic;
 
+    public AudioSource mainMusic;
+
 
     public float _hp;
 
@@ -69,10 +71,13 @@ public class Health : MonoBehaviour
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
+        gameObject.SetActive(false);
+
+        mainMusic.pitch = 0.95f;
 
         killStats = WavesManagerController.killCount;
         waveStats = WavesManagerController.currentWave;
         KillStatistic.text = "Убийства: " + killStats.ToString();
-        WavesStatistic.text = "Волн пройдено: " + waveStats.ToString();
+        WavesStatistic.text = "Волн пройдено: " + (waveStats - 1).ToString();
     }
 }

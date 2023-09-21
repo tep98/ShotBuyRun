@@ -9,7 +9,7 @@ public class Restart : MonoBehaviour
     public Animator DeadScreenAnimator;
     public Button restartButton;
 
-	void Start () {
+	public void Start () {
 		restartButton.onClick.AddListener(TaskOnClick);
 	}
     public void TaskOnClick()
