@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     public GameObject panel;
     public GameObject gameplayUI;
     public GameObject notiUI;
+    public GameObject AdRestart;
     
     private WavesManager WavesManagerController;
     private int killStats;
@@ -68,6 +69,7 @@ public class Health : MonoBehaviour
     public void KillMC()
     {
         Die?.Invoke();
+        AdRestart.SetActive(false);
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);

@@ -12,6 +12,7 @@ public class DeadAnimationScript : MonoBehaviour
 
     public GameObject wavesManager;
     public GameObject spawner;
+    public GameObject AdRestart;
 
     private void Start()
     {
@@ -32,8 +33,8 @@ public class DeadAnimationScript : MonoBehaviour
         }
     }
 
-    public void KillPlayer()
+    public void ShowAdRestart()
     {
-        HPManager.KillMC();
+        AdRestart.SetActive(true);
     }
 }
