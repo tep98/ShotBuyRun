@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;
     public WavesManager WavesManagerController;
-    public GameObject[] damageSounds;
 
     private Renderer PillagerSpriteRenderer;
 
@@ -20,13 +19,10 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        int randSound = Random.Range(0, damageSounds.Length);
-        Instantiate(damageSounds[randSound], transform.position, Quaternion.identity);
-        Destroy(damageSounds[randSound]);
-
         PillagerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 183 / 255.0f, 183 / 255.0f));
         Invoke("SetDefaultColor", 0.2f);
 
+        GetComponent<AudioSource>().Play();
 
         if (health <= 0)
         {
