@@ -8,7 +8,7 @@ public class EnemyFollow : MonoBehaviour
     public float new_speed;
     public Transform target;
     private bool enemyFacingLeft;
-    
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();

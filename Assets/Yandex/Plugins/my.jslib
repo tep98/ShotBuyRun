@@ -20,10 +20,5 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  GetDeviceInfo : function () {
-    myGameInstance.SendMessage("PLAYER", "GettingDevice", ysdk.deviceInfo.type.isDesktop);
-    console.log(ysdk.deviceInfo.type.isDesktop);
-  },
-
 
 });

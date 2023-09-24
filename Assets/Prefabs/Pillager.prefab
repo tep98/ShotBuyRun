@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   WavesManagerController: {fileID: 0}
+  Coin: {fileID: 2426747498656165596, guid: 7e2f8f226f85b4a4d959dc26c4f7adf6, type: 3}
 --- !u!114 &-1026120521031256447
 MonoBehaviour:
   m_ObjectHideFlags: 0

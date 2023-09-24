@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private float _maxHP;
+    public float _maxHP;
 
     [SerializeField]
     private UnityEvent Die;
