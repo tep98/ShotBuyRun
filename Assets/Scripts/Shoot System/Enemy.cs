@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     private Renderer PillagerSpriteRenderer;
 
+    public GameObject Coin;
+
     private void Start()
     {
         PillagerSpriteRenderer = GetComponent<Renderer>();
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         WavesManagerController.ExtendKillCounter();
+        Instantiate(Coin, new Vector3(transform.position.x, transform.position.y, 4), Quaternion.identity);
         Destroy(gameObject);
     }
 

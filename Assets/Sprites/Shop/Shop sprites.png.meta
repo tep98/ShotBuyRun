@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 8000b7fa8e04f62428540c440ae7cfba
+guid: 6cfa8ec37ad905a4086f626a5a73485b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4855796935591688104
-    second: LOGO_0
+      213: 580382659794919804
+    second: Shop sprites_0
+  - first:
+      213: -4780886885144117898
+    second: Shop sprites_1
+  - first:
+      213: -4143755570246420509
+    second: Shop sprites_2
+  - first:
+      213: 2076198390139321188
+    second: Shop sprites_3
+  - first:
+      213: -5593917098242113457
+    second: Shop sprites_4
+  - first:
+      213: -1993264600229318940
+    second: Shop sprites_5
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,38 +145,89 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LOGO_0
+      name: Shop sprites_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 5
+        y: 26
+        width: 10
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a77f57f591436340800000000000000
-      internalID: 4855796935591688104
+      spriteID: c716fde34feed0800800000000000000
+      internalID: 580382659794919804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop sprites_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bfd778f6320dc10800000000000000
+      internalID: 2076198390139321188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop sprites_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 5
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee68f728608654e0800000000000000
+      internalID: -1993264600229318940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop sprites_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 25
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5a52798aeaa3a4dbb9bd41e9aa8fbf
+      internalID: -4780886885144117898
       vertices: []
       indices: 
       edges: []
@@ -169,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 10328770efc93d14585a2f06cd10aaeb
     internalID: 0
     vertices: []
     indices: 
@@ -177,7 +243,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LOGO_0: 4855796935591688104
+      Shop sprites_0: 580382659794919804
+      Shop sprites_1: -4780886885144117898
+      Shop sprites_2: -4143755570246420509
+      Shop sprites_3: 2076198390139321188
+      Shop sprites_4: -5593917098242113457
+      Shop sprites_5: -1993264600229318940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

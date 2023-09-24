@@ -6,14 +6,15 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public int damage = 20;
+    public int defaultDamage;
     public Rigidbody2D rb;
-
 
     public GameObject bulletHitEffect;
 
     void Start()
     {
         rb.velocity = transform.right * speed;
+        defaultDamage = damage;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -26,5 +27,15 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         Destroy(gameObject, 2);
+    }
+
+
+    public void AddDamage(int AddedDamage)
+    {
+        damage += AddedDamage;
+    }
+    public void SetDefaultDamage()
+    {
+        damage = defaultDamage;
     }
 }
