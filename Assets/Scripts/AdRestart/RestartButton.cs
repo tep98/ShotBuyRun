@@ -12,24 +12,14 @@ public class RestartButton : MonoBehaviour
     public GameObject player;
 
     [DllImport("_Internal")]
-    private static extern void AdRelive(bool value);
+    private static extern void AdRelive();
 
-    void Start()
+    public void ShowAdButton() //функция для кнопки
     {
-        
+        AdRelive();
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void ShowAdButton()
-    {
-        AdRelive(true);
-    }
-
-    public void RelivePlayer()
+    public void RelivePlayer()//функция, вызываемая в JS
     {
         AdRestart.SetActive(false);
         panel.SetActive(false);

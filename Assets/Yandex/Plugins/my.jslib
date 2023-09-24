@@ -1,6 +1,7 @@
 mergeInto(LibraryManager.library, {
 
-  AdRelive : function(value){
+  AdRelive : function(){
+
     ysdk.adv.showRewardedVideo({
       callbacks: {
         onOpen: () => {
@@ -19,6 +20,22 @@ mergeInto(LibraryManager.library, {
       }
     })
   },
+
+    RateGame : function(){
+
+      ysdk.feedback.canReview()
+        .then(({ value, reason }) => {
+            if (value) {
+                ysdk.feedback.requestReview()
+                //сделать проверку feedbacksent, если true, то кнопка пропадет
+                    .then(({ feedbackSent }) => {
+                        console.log(feedbackSent);
+                    })
+            } else {
+                console.log(reason)
+            }
+        })
+    },
 
 
 });
