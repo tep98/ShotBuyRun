@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         WavesManagerController.ExtendKillCounter();
-        Instantiate(Coin, transform.position, Quaternion.identity);
+        Instantiate(Coin, new Vector3(transform.position.x, transform.position.y, 4), Quaternion.identity);
         Destroy(gameObject);
     }
 
