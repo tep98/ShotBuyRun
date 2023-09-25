@@ -8,9 +8,6 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     public float _maxHP;
-
-    [SerializeField]
-    private UnityEvent Die;
     
     [SerializeField]
     private UnityEvent<float> HpChaged;
@@ -30,6 +27,10 @@ public class Health : MonoBehaviour
 
     public AudioSource mainMusic;
 
+    public GameObject animatedPlayer;
+    private DeadAnimationScript DeadAnimScript;
+
+    public GameObject timer;
 
     public float _hp;
 
@@ -46,6 +47,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        DeadAnimScript = animatedPlayer.GetComponent<DeadAnimationScript>();
         Init();
         WavesManagerController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
         killStats = WavesManagerController.killCount;
@@ -66,14 +68,14 @@ public class Health : MonoBehaviour
     {
         HP+=hp;
     } 
+
     public void KillMC()
     {
-        Die?.Invoke();
+        gameObject.SetActive(false);
         AdRestart.SetActive(false);
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
-        gameObject.SetActive(false);
 
         mainMusic.pitch = 0.95f;
 
@@ -82,4 +84,17 @@ public class Health : MonoBehaviour
         KillStatistic.text = "Убийства: " + killStats.ToString();
         WavesStatistic.text = "Волн пройдено: " + (waveStats - 1).ToString();
     }
+
+    public void RespawnMC()
+    {
+        HP = _maxHP;
+        gameObject.SetActive(true);
+        AdRestart.SetActive(false);
+        panel.SetActive(false);
+        gameplayUI.SetActive(true);
+        notiUI.SetActive(true);
+        DeadAnimScript.Respawn();
+        timer.GetComponent<AdRestartTimer>().ResetTimer();
+    }
+
 }

@@ -2092,10 +2092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0793f5594d2b0b8438e3f6d83a4259f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1101663068}
-  gameplayUI: {fileID: 283147213}
-  notiUI: {fileID: 218719514}
-  AdRestart: {fileID: 1637383818}
   player: {fileID: 993430448}
 --- !u!4 &425219470
 Transform:
@@ -4762,21 +4758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHP: 10
-  Die:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 993430448}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   HpChaged:
     m_PersistentCalls:
       m_Calls: []
@@ -4802,6 +4783,8 @@ MonoBehaviour:
   WavesStatistic: {fileID: 674154687}
   KillStatistic: {fileID: 1091353335}
   mainMusic: {fileID: 1492697571}
+  animatedPlayer: {fileID: 1178544625}
+  timer: {fileID: 539358353}
   _hp: 0
 --- !u!114 &993430454
 MonoBehaviour:
@@ -11305,9 +11288,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 993430448}
+  weapon: {fileID: 262566801}
+  isLive: 1
   wavesManager: {fileID: 191322020}
   spawner: {fileID: 719768447}
   AdRestart: {fileID: 1637383818}
+  stepSound: {fileID: 36497264}
 --- !u!1 &1197645026
 GameObject:
   m_ObjectHideFlags: 0

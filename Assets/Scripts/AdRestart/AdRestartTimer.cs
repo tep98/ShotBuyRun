@@ -24,14 +24,20 @@ public class AdRestartTimer : MonoBehaviour
     void Update()
     {
         if (timeBtwSpawns <= 0)
-        {   
-            HPManager.KillMC();
+        {
+            timeBtwSpawns = StartTimeBtwSpawns;
+            HPManager.KillMC();    
         }
         else
         {
-            leftSec = (int)timeBtwSpawns+1;
+            leftSec = (int)timeBtwSpawns + 1;
             Timer.text = leftSec.ToString();
             timeBtwSpawns -= Time.deltaTime;
         }
+    }
+
+    public void ResetTimer()
+    {
+        timeBtwSpawns = StartTimeBtwSpawns;
     }
 }
