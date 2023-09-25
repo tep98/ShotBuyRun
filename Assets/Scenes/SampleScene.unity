@@ -4800,26 +4800,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 1178544625}
-  DamageGot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 993430453}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: GetDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   takeDamageSound: {fileID: 7282389238257341183, guid: 3d30ca494c0f71f4292bff4bce3d5458, type: 3}
   bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}
-  startTimeBtwDamage: 1
+  startTimeBtwDamage: 0.5
   HeartUI: {fileID: 1047136073}
   isExit: 1
+  damageByPillager: 2
 --- !u!1 &1006512475
 GameObject:
   m_ObjectHideFlags: 0
