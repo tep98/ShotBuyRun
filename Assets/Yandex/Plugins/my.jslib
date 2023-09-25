@@ -21,21 +21,21 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-    RateGame : function(){
+  RateGame : function(){
 
-      ysdk.feedback.canReview()
-        .then(({ value, reason }) => {
-            if (value) {
-                ysdk.feedback.requestReview()
+    ysdk.feedback.canReview()
+    .then(({ value, reason }) => {
+      if (value) {
+        ysdk.feedback.requestReview()
                 //сделать проверку feedbacksent, если true, то кнопка пропадет
-                    .then(({ feedbackSent }) => {
-                        console.log(feedbackSent);
-                    })
-            } else {
-                console.log(reason)
-            }
+        .then(({ feedbackSent }) => {
+          console.log(feedbackSent);
         })
-    },
+      } else {
+        console.log(reason);
+      }
+    })
+  },
 
 
 });

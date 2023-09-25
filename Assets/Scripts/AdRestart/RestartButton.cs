@@ -11,7 +11,7 @@ public class RestartButton : MonoBehaviour
     public GameObject AdRestart;
     public GameObject player;
 
-    [DllImport("_Internal")]
+    [DllImport("__Internal")]
     private static extern void AdRelive();
 
     public void ShowAdButton() //функция для кнопки

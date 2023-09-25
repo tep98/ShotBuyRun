@@ -6,7 +6,7 @@ using UnityEngine;
 public class Yandex : MonoBehaviour
 {
     //функции для передачи в JS
-    [DllImport("_Internal")]
+    [DllImport("__Internal")]
     private static extern void RateGame();
 
     public void RateGameButton()
