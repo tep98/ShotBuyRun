@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource step;
 
-    private void Start()
+    private void OnEnable() 
     {
         rb = GetComponent<Rigidbody2D>();
         anim = animationObject.GetComponent<Animator>();
@@ -26,32 +26,23 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GunManager = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Gun>();
-        gunTurnLeft = GunManager.gunTurnLeft;
+        if (animationObject.activeSelf)
+        {
+            moveVector.x = Input.GetAxis("Horizontal");
+            moveVector.y = Input.GetAxis("Vertical");
+            rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
 
-        moveVector.x = Input.GetAxis("Horizontal");
-        moveVector.y = Input.GetAxis("Vertical");
-        rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
-
-        if(facingLeft && moveVector.x > 0 && !gunTurnLeft)
-        {
-            TurnPlayer();
-        }
-        else if(!facingLeft && moveVector.x < 0 && gunTurnLeft)
-        {
-            TurnPlayer();
-        }
-
-        if(moveVector.x != 0 || moveVector.y != 0)
-        {
-            anim.SetBool("isRunning", true);
-            playerIsRunning = true;
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-            playerIsRunning = false;
-            step.Play();
+            if (moveVector.x != 0 || moveVector.y != 0)
+            {
+                anim.SetBool("isRunning", true);
+                playerIsRunning = true;
+            }
+            else
+            {
+                anim.SetBool("isRunning", false);
+                playerIsRunning = false;
+                step.Play();
+            }
         }
     }
 

@@ -19,7 +19,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         timeController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
-        newStartTimeBtwSpawns = timeController.waveTimeBtwSpawns;
         newMinStartTimeBtwSpawns = timeController.waveMinTimeBtwSpawns;
     }
 

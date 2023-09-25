@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class RestartButton : MonoBehaviour
 {
-    public GameObject panel;
-    public GameObject gameplayUI;
-    public GameObject notiUI;
-    public GameObject AdRestart;
     public GameObject player;
+    private Health health;
 
     [DllImport("_Internal")]
     private static extern void AdRelive();
+
+    private void Start()
+    {
+        health = player.GetComponent<Health>();
+    }
 
     public void ShowAdButton() //функция для кнопки
     {
@@ -21,10 +23,6 @@ public class RestartButton : MonoBehaviour
 
     public void RelivePlayer()//функция, вызываемая в JS
     {
-        AdRestart.SetActive(false);
-        panel.SetActive(false);
-        gameplayUI.SetActive(true);
-        notiUI.SetActive(true);
-        player.SetActive(true);
+        health.RespawnMC();
     }
 }
