@@ -7,8 +7,6 @@ public class Damageable : MonoBehaviour
 {
     public GameObject playerSprite;
     private Renderer playerSpriteRenderer;
-    [SerializeField]
-    private UnityEvent<float> DamageGot;
 
     public GameObject takeDamageSound;
 
@@ -20,82 +18,56 @@ public class Damageable : MonoBehaviour
     public GameObject HeartUI;
     private Animator HeartAnim;
 
+    private Health health;
     private float hp;
     private float maxHP;
     public bool isExit = true;
 
+    public float damageByPillager;
+
     private void Start()
     {
+        health = GetComponent<Health>();
         playerSpriteRenderer = playerSprite.GetComponent<Renderer>();
-        timeBtwDamage = startTimeBtwDamage;
+        timeBtwDamage = 0;
         HeartAnim = HeartUI.GetComponent<Animator>();
-        maxHP = GetComponent<Health>().HP;
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if (isExit)
-        {
-            DamageFunction(other);
-        }
-        isExit = false;
+        maxHP = health.HP;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (timeBtwDamage <= 0)
+        if (other.CompareTag("Enemy"))
         {
-            timeBtwDamage = startTimeBtwDamage;
-            DamageFunction(other);
+            if (timeBtwDamage <= 0)
+            {
+                timeBtwDamage = startTimeBtwDamage;
+                DamageFunction();
+            }
+            else
+            {
+                timeBtwDamage -= Time.deltaTime;
+            }
+        }    
+    }
+
+    public void DamageFunction()
+    {
+        health.GetDamage(damageByPillager);
+        playerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 83 / 255.0f, 83 / 255.0f));
+        Invoke("SetDefaultColor", 0.2f);
+
+        HeartAnim.SetTrigger("takeDamage");
+
+        Instantiate(takeDamageSound, transform.position, Quaternion.identity);
+        Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
+
+        if (health._hp < (maxHP / 2))
+        {
+            HeartAnim.SetBool("lowHP", true);
         }
         else
         {
-            timeBtwDamage -= Time.deltaTime;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        BoxCollider2D boxCollider = other.GetComponent<BoxCollider2D>();
-        if (boxCollider != null)
-        {
-            if (boxCollider.TryGetComponent<AttackSystem>(out var attackSystem))
-            {
-                timeBtwDamage = startTimeBtwDamage;
-                Invoke("SetIsExit", startTimeBtwDamage / 1.5f);
-            }
-        }
-    }
-
-
-    public void DamageFunction(Collider2D other)
-    {
-        BoxCollider2D boxCollider = other.GetComponent<BoxCollider2D>();
-        if (boxCollider != null)
-        {
-            if (boxCollider.TryGetComponent<AttackSystem>(out var attacksystem))
-            {
-                DamageGot?.Invoke(attacksystem.Damage);
-
-                playerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 83 / 255.0f, 83 / 255.0f));
-                Invoke("SetDefaultColor", 0.2f);
-
-                Instantiate(takeDamageSound, transform.position, Quaternion.identity);
-                Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
-
-                HeartAnim.SetTrigger("takeDamage");
-
-                hp = GetComponent<Health>()._hp;
-                if (hp < (maxHP / 2))
-                {
-                    HeartAnim.SetBool("lowHP", true);
-                }
-                else
-                {
-                    HeartAnim.SetBool("lowHP", false);
-                }
-            }
+            HeartAnim.SetBool("lowHP", false);
         }
     } 
 

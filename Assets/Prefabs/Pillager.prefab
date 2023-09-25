@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 1910428277983255223}
   - component: {fileID: 5884110808799385889}
   - component: {fileID: 5081508654617089063}
-  - component: {fileID: -1026120521031256447}
   - component: {fileID: -1733272972428093316}
   m_Layer: 0
   m_Name: Pillager
@@ -126,7 +125,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.010253906, y: 0.017089248}
+  m_Offset: {x: -0.060502052, y: 0.010656923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3751926, y: 1.6341786}
+  m_Size: {x: 1.6453533, y: 1.9043393}
   m_EdgeRadius: 0
 --- !u!114 &6814145982353307362
 MonoBehaviour:
@@ -235,7 +234,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.15833426, y: -0.5701655}
+  m_Offset: {x: 0.15833426, y: -0.5412197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -245,7 +244,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.52686405, y: 0.4596691}
+  m_Size: {x: 0.52686405, y: 0.4017775}
   m_EdgeRadius: 0
 --- !u!114 &5081508654617089063
 MonoBehaviour:
@@ -262,19 +261,6 @@ MonoBehaviour:
   health: 100
   WavesManagerController: {fileID: 0}
   Coin: {fileID: 2426747498656165596, guid: 7e2f8f226f85b4a4d959dc26c4f7adf6, type: 3}
---- !u!114 &-1026120521031256447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779342507800977542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e18d670134b12848b0075fae7ea629a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 2
 --- !u!82 &-1733272972428093316
 AudioSource:
   m_ObjectHideFlags: 0
