@@ -14,6 +14,7 @@ public class RestartButton : MonoBehaviour
     private void Start()
     {
         health = player.GetComponent<Health>();
+        transform.parent = null;
     }
 
     public void ShowAdButton() //функция для кнопки
