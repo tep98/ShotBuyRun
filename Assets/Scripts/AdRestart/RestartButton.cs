@@ -20,10 +20,12 @@ public class RestartButton : MonoBehaviour
     public void ShowAdButton() //функция для кнопки
     {
         AdRelive();
+        Time.timeScale = 0;
     }
 
     public void RelivePlayer()//функция, вызываемая в JS
     {
+        Time.timeScale = 1;
         health.RespawnMC();
     }
 }
