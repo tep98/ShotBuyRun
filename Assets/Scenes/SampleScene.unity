@@ -3324,6 +3324,7 @@ MonoBehaviour:
   newStartTimeBtwSpawns: 5
   timeBtwSpawns: 0
   newMinStartTimeBtwSpawns: 0
+  wavesManager: {fileID: 191322020}
   countSpawns: 0
 --- !u!1 &772166701
 GameObject:
@@ -4485,7 +4486,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 425219469}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
-        m_MethodName: ShowAdButton
+        m_MethodName: RelivePlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
