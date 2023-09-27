@@ -29,6 +29,11 @@ public class DeadAnimationScript : MonoBehaviour
     }
     private void Update()
     {
+        KillPlayer();
+    }
+
+    public void KillPlayer()
+    {
         if ((HPManager._hp <= 0) && isLive)
         {
             isLive = false;
@@ -57,6 +62,7 @@ public class DeadAnimationScript : MonoBehaviour
         isLive = true;
         wavesManager.SetActive(true);
         spawner.SetActive(true);
+        spawner.GetComponent<Spawner>().setDefaultCountSpawns();
         MCAnimator.SetTrigger("Respawn");
         stepSound.SetActive(true);
         weapon.SetActive(true);

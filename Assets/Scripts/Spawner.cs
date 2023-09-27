@@ -14,11 +14,13 @@ public class Spawner : MonoBehaviour
     public float timeBtwSpawns;
     public float newMinStartTimeBtwSpawns;
 
+    public GameObject wavesManager;
+
     public int countSpawns = 0;
 
     private void Start()
     {
-        timeController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
+        timeController = wavesManager.GetComponent<WavesManager>();
         newMinStartTimeBtwSpawns = timeController.waveMinTimeBtwSpawns;
     }
 
@@ -31,8 +33,6 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        timeController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
-
         if(timeBtwSpawns <= 0)
         {
             rand = Random.Range(0, enemy.Length);
@@ -50,5 +50,10 @@ public class Spawner : MonoBehaviour
         {
             timeBtwSpawns -= Time.deltaTime;
         }
+    }
+
+    public void setDefaultCountSpawns()
+    {
+        countSpawns = 0;
     }
 }
