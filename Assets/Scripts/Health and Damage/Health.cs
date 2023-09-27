@@ -97,15 +97,4 @@ public class Health : MonoBehaviour
         timer.GetComponent<AdRestartTimer>().ResetTimer();
     }
 
-    public void FirstSpawnMC()
-    {
-        HP = _maxHP;
-        AdRestart.SetActive(false);
-        panel.SetActive(false);
-        gameplayUI.SetActive(true);
-        notiUI.SetActive(true);
-        DeadAnimScript.Respawn();
-        timer.GetComponent<AdRestartTimer>().ResetTimer();
-    }
-
 }

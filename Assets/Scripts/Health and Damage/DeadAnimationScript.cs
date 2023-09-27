@@ -29,11 +29,6 @@ public class DeadAnimationScript : MonoBehaviour
     }
     private void Update()
     {
-        KillPlayer();
-    }
-
-    public void KillPlayer()
-    {
         if ((HPManager._hp <= 0) && isLive)
         {
             isLive = false;

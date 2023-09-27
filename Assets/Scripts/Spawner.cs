@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         timeController = wavesManager.GetComponent<WavesManager>();
+        newStartTimeBtwSpawns = timeController.waveTimeBtwSpawns;
         newMinStartTimeBtwSpawns = timeController.waveMinTimeBtwSpawns;
     }
 
