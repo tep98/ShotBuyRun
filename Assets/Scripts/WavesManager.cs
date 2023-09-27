@@ -42,6 +42,7 @@ public class WavesManager : MonoBehaviour
         if (timer <= 0)
         {   
             Spawner.SetActive(false);
+
             if (killCount >= Spawner.GetComponent<Spawner>().countSpawns)
             {
                 currentWave += 1;

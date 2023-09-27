@@ -57,7 +57,6 @@ public class DeadAnimationScript : MonoBehaviour
         isLive = true;
         wavesManager.SetActive(true);
         spawner.SetActive(true);
-        spawner.GetComponent<Spawner>().setDefaultCountSpawns();
         MCAnimator.SetTrigger("Respawn");
         stepSound.SetActive(true);
         weapon.SetActive(true);
