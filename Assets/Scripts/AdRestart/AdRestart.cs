@@ -17,7 +17,7 @@ public class AdRestart : MonoBehaviour
 		continueButton.onClick.AddListener(TaskOnClick);
 	}
     public void TaskOnClick()
-    {       
+    {
         HPManager.KillMC();
     }
 }
