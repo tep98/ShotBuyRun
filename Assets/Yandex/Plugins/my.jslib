@@ -38,4 +38,44 @@ mergeInto(LibraryManager.library, {
   },
 
 
+
+
+
+
+
+
+
+
+  StartAdBanner : function(){
+
+    ysdk.adv.showFullscreenAdv({
+      callbacks: {
+        onClose: function(wasShown) {
+          myGameInstance.SendMessage("basement(MCSpawnAnimation)_0", "OffPause");
+          // some action after close
+        },
+        onError: function(error) {
+          myGameInstance.SendMessage("basement(MCSpawnAnimation)_0", "OffPause");
+          // some action on error
+        }
+      }
+    })
+  },
+
+  DeathAdBanner : function(){
+
+    ysdk.adv.showFullscreenAdv({
+      callbacks: {
+        onClose: function(wasShown) {
+          myGameInstance.SendMessage("basement(MCSpawnAnimation)_0", "OffPause");
+          // some action after close
+        },
+        onError: function(error) {
+          myGameInstance.SendMessage("basement(MCSpawnAnimation)_0", "OffPause");
+          // some action on error
+        }
+      }
+    })
+  },
+
 });

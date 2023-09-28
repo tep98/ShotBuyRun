@@ -2811,7 +2811,7 @@ GameObject:
   - component: {fileID: 560807623}
   - component: {fileID: 560807622}
   m_Layer: 0
-  m_Name: basement (MCSpawnAnimation)_0
+  m_Name: basement(MCSpawnAnimation)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4486,7 +4486,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 425219469}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
-        m_MethodName: RelivePlayer
+        m_MethodName: ShowAdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    //функции для передачи в JS
+    [DllImport("__Internal")]
+    private static extern void DeathAdBanner();
+
     [SerializeField]
     public float _maxHP;
     
@@ -79,6 +84,9 @@ public class Health : MonoBehaviour
 
         mainMusic.pitch = 0.95f;
 
+        DeathAdBanner();
+        Time.timeScale = 0;
+
         killStats = WavesManagerController.killCount;
         waveStats = WavesManagerController.currentWave;
         KillStatistic.text = "Убийства: " + killStats.ToString();
@@ -96,5 +104,4 @@ public class Health : MonoBehaviour
         DeadAnimScript.Respawn();
         timer.GetComponent<AdRestartTimer>().ResetTimer();
     }
-
 }
