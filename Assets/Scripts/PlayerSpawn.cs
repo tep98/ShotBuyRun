@@ -12,16 +12,22 @@ public class PlayerSpawn : MonoBehaviour
     public GameObject player;
     public GameObject playerMain;
 
+    public AudioSource mainMusic;
+    private float musicVolume;
+
     public void Start()
     {
+        player.SetActive(false);
         StartAdBanner();
         Time.timeScale = 0;
-        player.SetActive(false);
+        musicVolume = mainMusic.volume;
+        mainMusic.volume = 0f;
     }
 
     public void OffPause()
     {
         Time.timeScale = 1;
+        mainMusic.volume = musicVolume;
     }
 
     public void Spawn()

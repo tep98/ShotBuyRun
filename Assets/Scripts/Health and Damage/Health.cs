@@ -46,6 +46,7 @@ public class Health : MonoBehaviour
 
     public float _hp;
 
+
     public float HP
     {
         get => _hp;
@@ -108,6 +109,8 @@ public class Health : MonoBehaviour
         mainMusic.pitch = 0.95f;
 
         DeathAdBanner();
+        mainMusic.volume = 0f;
+
         Time.timeScale = 0;
 
         killStats = WavesManagerController.killCount;
