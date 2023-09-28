@@ -32,6 +32,13 @@ public class Health : MonoBehaviour
 
     public GameObject timer;
 
+    [SerializeField] string _enKills;
+    [SerializeField] string _ruKills; 
+    [SerializeField] string _enWaves;
+    [SerializeField] string _ruWaves;
+    private string currentValueKills;
+    private string currentValueWaves;
+
     public float _hp;
 
     public float HP
@@ -52,6 +59,22 @@ public class Health : MonoBehaviour
         WavesManagerController = GameObject.Find("WavesManager").GetComponent<WavesManager>();
         killStats = WavesManagerController.killCount;
         waveStats = WavesManagerController.currentWave;
+
+        if (Language.Instance.currentLanguage == "en")
+        {
+            currentValueKills = _enKills;
+            currentValueWaves = _enWaves;
+        }
+        else if (Language.Instance.currentLanguage == "ru")
+        {
+            currentValueKills = _ruKills;
+            currentValueWaves = _ruWaves;
+        }
+        else
+        {
+            currentValueKills = _enKills;
+            currentValueWaves = _enWaves;
+        }
     }
 
     public void Init()
@@ -81,8 +104,8 @@ public class Health : MonoBehaviour
 
         killStats = WavesManagerController.killCount;
         waveStats = WavesManagerController.currentWave;
-        KillStatistic.text = "Убийства: " + killStats.ToString();
-        WavesStatistic.text = "Волн пройдено: " + (waveStats - 1).ToString();
+        KillStatistic.text = currentValueKills + ": " + killStats.ToString();
+        WavesStatistic.text = currentValueWaves + ": " + (waveStats - 1).ToString();
     }
 
     public void RespawnMC()
