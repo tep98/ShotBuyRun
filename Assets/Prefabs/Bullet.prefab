@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 20
-  defaultDamage: 20
+  damage: 10
+  defaultDamage: 10
   rb: {fileID: -1817217363348635361}
   bulletHitEffect: {fileID: 7275914668706757072, guid: fe0431d35d6b7124598914f4057c6a39, type: 3}

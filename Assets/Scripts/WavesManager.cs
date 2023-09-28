@@ -31,10 +31,30 @@ public class WavesManager : MonoBehaviour
 
     public Animator WaveNotiAnim;
 
+    [SerializeField] string _en;
+    [SerializeField] string _ru;
+
+    private string currentValue;
+
     void Start()
     {
         timer = waveTime + timeOutTime;
         ShopAnim = Shop.GetComponent<Animator>();
+
+        if (Language.Instance.currentLanguage == "en")
+        {
+            currentValue = _en;
+        }
+        else if (Language.Instance.currentLanguage == "ru")
+        {
+            currentValue = _ru;
+        }
+        else
+        {
+            currentValue = _en;
+        }
+        WaveNotiText.text = currentValue + " " + currentWave.ToString();
+        currentWaveUI.text = currentValue + " " + currentWave.ToString();
     }
 
     void Update()
@@ -45,8 +65,8 @@ public class WavesManager : MonoBehaviour
             if (killCount >= Spawner.GetComponent<Spawner>().countSpawns)
             {
                 currentWave += 1;
-                WaveNotiText.text = "Волна " + currentWave.ToString();
-                currentWaveUI.text = "Волна " + currentWave.ToString();
+                WaveNotiText.text = currentValue + " " + currentWave.ToString();
+                currentWaveUI.text = currentValue + " " + currentWave.ToString();
                 WaveNotiAnim.SetBool("ShowWaveNoti", true);
                 Shop.SetActive(true);
 
