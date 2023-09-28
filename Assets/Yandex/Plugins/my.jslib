@@ -9,10 +9,10 @@ mergeInto(LibraryManager.library, {
         },
         onRewarded: () => {
           console.log('Rewarded!');
-          myGameInstance.SendMessage("AdReliveManager", "RelivePlayer");
         },
         onClose: () => {
           console.log('Video ad closed.');
+          myGameInstance.SendMessage("AdReliveManager", "RelivePlayer");
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);
