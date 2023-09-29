@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerSpawn : MonoBehaviour
 {
@@ -12,27 +13,25 @@ public class PlayerSpawn : MonoBehaviour
     public GameObject player;
     public GameObject playerMain;
 
-    public AudioSource mainMusic;
-    private float musicVolume;
+    public AudioMixer audioMixer;
 
     public void Start()
     {
         player.SetActive(false);
         StartAdBanner();
+        audioMixer.SetFloat("Master", -80f);
         Time.timeScale = 0;
-        musicVolume = mainMusic.volume;
-        mainMusic.volume = 0f;
     }
 
     public void OffPause()
     {
         Time.timeScale = 1;
-        mainMusic.volume = musicVolume;
     }
 
     public void Spawn()
     {
         player.SetActive(true);
         playerMain.GetComponent<PlayerController>().enabled = true;
+        audioMixer.SetFloat("Master", 0f);
     }
 }

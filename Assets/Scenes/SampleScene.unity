@@ -2938,7 +2938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1178544625}
   playerMain: {fileID: 993430448}
-  mainMusic: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 72084b07efa35f34cbdf4fbd88c2165b, type: 2}
 --- !u!61 &560807621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12524,7 +12524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1637383819
 RectTransform:
   m_ObjectHideFlags: 0

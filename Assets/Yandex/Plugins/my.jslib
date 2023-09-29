@@ -46,14 +46,6 @@ mergeInto(LibraryManager.library, {
   },
 
 
-
-
-
-
-
-
-
-
   StartAdBanner : function(){
 
     ysdk.adv.showFullscreenAdv({
