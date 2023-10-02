@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private TextMesh damageText;
 
     //Переменные для критического урона
-    public float criticalHitChance = 0.1f; // Шанс крита (0.1f = 10%)
+    public float criticalHitChance = 0.2f; // Шанс крита (0.1f = 10%)
     public int criticalHitMultiplier = 2;  // Множитель крита
 
 
