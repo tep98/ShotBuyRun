@@ -9,7 +9,14 @@ public class Enemy : MonoBehaviour
 
     private Renderer PillagerSpriteRenderer;
 
+    //Objects
     public GameObject Coin;
+    private TextMesh damageText;
+
+    //Переменные для критического урона
+    public float criticalHitChance = 0.1f; // Шанс крита (0.1f = 10%)
+    public int criticalHitMultiplier = 2;  // Множитель крита
+
 
     private void Start()
     {
@@ -19,8 +26,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        int endDamage = damage;
+        float randomValue = Random.value;
 
+        if (randomValue <= criticalHitChance)
+        {
+            endDamage *= criticalHitMultiplier;
+            Debug.Log("Critical Damage!"); //временно, для проверки работоспособности
+        }
+
+        health -= endDamage;
+        
         PillagerSpriteRenderer.material.SetColor("_Color", new Color(200 / 255.0f, 183 / 255.0f, 183 / 255.0f));
         Invoke("SetDefaultColor", 0.2f);
 
