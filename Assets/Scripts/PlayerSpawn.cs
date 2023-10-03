@@ -19,7 +19,6 @@ public class PlayerSpawn : MonoBehaviour
     {
         player.SetActive(false);
         StartAdBanner();
-        audioMixer.SetFloat("Master", -80f);
         Time.timeScale = 0;
     }
 
