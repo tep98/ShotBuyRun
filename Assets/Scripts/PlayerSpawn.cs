@@ -30,7 +30,7 @@ public class PlayerSpawn : MonoBehaviour
     public void Spawn()
     {
         player.SetActive(true);
-        playerMain.GetComponent<PlayerController>().enabled = true;
         audioMixer.SetFloat("Master", 0f);
+        playerMain.GetComponent<PlayerController>().enabled = true;
     }
 }
