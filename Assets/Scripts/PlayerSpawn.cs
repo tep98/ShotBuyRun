@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class PlayerSpawn : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerSpawn : MonoBehaviour
     public GameObject playerMain;
 
     public AudioMixer audioMixer;
+
+    public Animator DeadScreenAnimator;
 
     public void Start()
     {
@@ -29,8 +32,8 @@ public class PlayerSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        player.SetActive(true);
         audioMixer.SetFloat("Master", 0f);
+        player.SetActive(true);
         playerMain.GetComponent<PlayerController>().enabled = true;
     }
 }

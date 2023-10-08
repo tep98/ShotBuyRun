@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Health : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class Health : MonoBehaviour
     public Text WavesStatistic;
     public Text KillStatistic;
 
-    public AudioSource mainMusic;
+    public AudioMixer audioMixer;
 
     public GameObject animatedPlayer;
     private DeadAnimationScript DeadAnimScript;
@@ -100,16 +101,14 @@ public class Health : MonoBehaviour
 
     public void KillMC()
     {
+        audioMixer.SetFloat("Master", -80f);
         gameObject.SetActive(false);
         AdRestart.SetActive(false);
         panel.SetActive(true);
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
 
-        mainMusic.pitch = 0.95f;
-
         DeathAdBanner();
-        mainMusic.volume = 0f;
 
         Time.timeScale = 0;
 
