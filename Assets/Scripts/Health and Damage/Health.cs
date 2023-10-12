@@ -30,6 +30,8 @@ public class Health : MonoBehaviour
     private int waveStats;
     public Text WavesStatistic;
     public Text KillStatistic;
+    public Text KillRecordUI;
+    public Text WavesRecordUI;
 
     public AudioMixer audioMixer;
 
@@ -44,6 +46,8 @@ public class Health : MonoBehaviour
     [SerializeField] string _ruWaves;
     private string currentValueKills;
     private string currentValueWaves;
+    private int KillRecord = 0;
+    private int WavesRecord = 0;
 
     public float _hp;
 
@@ -108,7 +112,7 @@ public class Health : MonoBehaviour
         gameplayUI.SetActive(false);
         notiUI.SetActive(false);
 
-        DeathAdBanner();
+        DeathAdBanner();        
 
         Time.timeScale = 0;
 
@@ -116,6 +120,23 @@ public class Health : MonoBehaviour
         waveStats = WavesManagerController.currentWave;
         KillStatistic.text = currentValueKills + ": " + killStats.ToString();
         WavesStatistic.text = currentValueWaves + ": " + (waveStats - 1).ToString();
+
+        KillRecord = killStats;
+        WavesRecord = waveStats;
+
+        if (KillRecord>Progress.Instance.PlayerInfo.Kills)
+        {
+            Progress.Instance.PlayerInfo.Kills = KillRecord;
+        }
+        if (WavesRecord>Progress.Instance.PlayerInfo.Waves)
+        {
+            Progress.Instance.PlayerInfo.Waves = WavesRecord;
+        }
+
+        KillRecordUI.text = " " + Progress.Instance.PlayerInfo.Kills.ToString();
+        WavesRecordUI.text = " " + Progress.Instance.PlayerInfo.Waves.ToString();
+
+        Progress.Instance.Save();
     }
 
     public void RespawnMC()

@@ -24,10 +24,14 @@ public class WavesManager : MonoBehaviour
     public Text WaveNotiText;
     public Text currentWaveUI;
 
+    public int KillRecord;
+    public int WavesRecord;
+
     public GameObject Spawner;
     public GameObject Shop;
     private Animator ShopAnim;
 
+    
 
     public Animator WaveNotiAnim;
 
@@ -40,6 +44,9 @@ public class WavesManager : MonoBehaviour
     {
         timer = waveTime + timeOutTime;
         ShopAnim = Shop.GetComponent<Animator>();
+
+        KillRecord = Progress.Instance.PlayerInfo.Kills;
+        WavesRecord = Progress.Instance.PlayerInfo.Waves;
 
         if (Language.Instance.currentLanguage == "en")
         {
@@ -94,5 +101,20 @@ public class WavesManager : MonoBehaviour
         Spawner.SetActive(true);
         WaveNotiAnim.SetBool("ShowWaveNoti", false);
         ShopAnim.SetTrigger("TurnOff");
+    }
+
+    public void SaveToProgress()
+    {
+        KillRecord = killCount;
+        WavesRecord = currentWave;
+
+        if (KillRecord>Progress.Instance.PlayerInfo.Kills)
+        {
+            Progress.Instance.PlayerInfo.Kills = KillRecord;
+        }
+        if (WavesRecord>Progress.Instance.PlayerInfo.Waves)
+        {
+            Progress.Instance.PlayerInfo.Waves = WavesRecord;
+        }
     }
 }

@@ -78,4 +78,35 @@ mergeInto(LibraryManager.library, {
     })
   },
 
+  MobileCheck : function(){
+
+    if (ysdk.deviceInfo.isMobile() || ysdk.deviceInfo.isTablet()) {
+      myGameInstance.SendMessage("PLAYER", "EnableMobile");
+    }
+  },
+
+  PlayerAuth : function(){
+    auth();
+  },
+
+  StartGame : function(){
+    initPlayer();
+  },
+
+  SaveExtern : function(date){
+    var dateString = UTF8ToString(date);
+    console.log(dateString);
+    var myobj = JSON.parse(dateString);
+    player.setData(myobj);
+  },
+
+  LoadExtern : function(){
+    initPlayer();
+    player.getData().then(_date => {
+      const myJSON = JSON.stringify(_date);
+      myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
+    });
+  },
+
+  
 });

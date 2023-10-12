@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,27 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource step;
 
+    //Mobile UI
+    public JoystickController joystick;
+    private bool isMobile = false;
+    public GameObject MobileUI;
+
+
+    [DllImport("__Internal")]
+    private static extern void MobileCheck();
+
+
+    private void Start()
+    {
+        MobileCheck();
+    }
+
+    public void EnableMobile()
+    {
+        MobileUI.SetActive(true);
+        isMobile = true;
+    }
+
     private void OnEnable() 
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,22 +48,45 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (animationObject.activeSelf)
+        if (!isMobile)
         {
-            moveVector.x = Input.GetAxis("Horizontal");
-            moveVector.y = Input.GetAxis("Vertical");
-            rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
+            if (animationObject.activeSelf)
+            {
+                moveVector.x = Input.GetAxis("Horizontal");
+                moveVector.y = Input.GetAxis("Vertical");
+                rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
 
-            if (moveVector.x != 0 || moveVector.y != 0)
-            {
-                anim.SetBool("isRunning", true);
-                playerIsRunning = true;
+                if (moveVector.x != 0 || moveVector.y != 0)
+                {
+                    anim.SetBool("isRunning", true);
+                    playerIsRunning = true;
+                }
+                else
+                {
+                    anim.SetBool("isRunning", false);
+                    playerIsRunning = false;
+                    step.Play();
+                }
             }
-            else
+        }
+        else
+        {
+            if (animationObject.activeSelf)
             {
-                anim.SetBool("isRunning", false);
-                playerIsRunning = false;
-                step.Play();
+                moveVector = joystick.InputDirection;
+                rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
+
+                if (moveVector.x != 0 || moveVector.y != 0)
+                {
+                    anim.SetBool("isRunning", true);
+                    playerIsRunning = true;
+                }
+                else
+                {
+                    anim.SetBool("isRunning", false);
+                    playerIsRunning = false;
+                    step.Play();
+                }
             }
         }
     }
