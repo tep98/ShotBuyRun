@@ -44,8 +44,14 @@ public class Health : MonoBehaviour
     [SerializeField] string _ruKills; 
     [SerializeField] string _enWaves;
     [SerializeField] string _ruWaves;
+    [SerializeField] string _enRecordKills;
+    [SerializeField] string _ruRecordKills;
+    [SerializeField] string _enRecordWaves;
+    [SerializeField] string _ruRecordWaves;
     private string currentValueKills;
     private string currentValueWaves;
+    private string currentValueRecordKills;
+    private string currentValueRecordWaves;
     private int KillRecord = 0;
     private int WavesRecord = 0;
 
@@ -75,16 +81,22 @@ public class Health : MonoBehaviour
         {
             currentValueKills = _enKills;
             currentValueWaves = _enWaves;
+            currentValueRecordKills = _enRecordKills;
+            currentValueRecordWaves = _enRecordWaves;
         }
         else if (Language.Instance.currentLanguage == "ru")
         {
             currentValueKills = _ruKills;
             currentValueWaves = _ruWaves;
+            currentValueRecordKills = _ruRecordKills;
+            currentValueRecordWaves = _ruRecordWaves;
         }
         else
         {
             currentValueKills = _enKills;
             currentValueWaves = _enWaves;
+            currentValueRecordKills = _enRecordKills;
+            currentValueRecordWaves = _enRecordWaves;
         }
     }
 
@@ -133,8 +145,8 @@ public class Health : MonoBehaviour
             Progress.Instance.PlayerInfo.Waves = WavesRecord;
         }
 
-        KillRecordUI.text = " " + Progress.Instance.PlayerInfo.Kills.ToString();
-        WavesRecordUI.text = " " + Progress.Instance.PlayerInfo.Waves.ToString();
+        KillRecordUI.text = currentValueRecordKills + ": " + Progress.Instance.PlayerInfo.Kills.ToString();
+        WavesRecordUI.text = currentValueRecordWaves + ": " + (Progress.Instance.PlayerInfo.Waves - 1).ToString();
 
         Progress.Instance.Save();
     }
