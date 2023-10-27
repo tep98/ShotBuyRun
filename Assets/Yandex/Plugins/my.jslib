@@ -101,12 +101,14 @@ mergeInto(LibraryManager.library, {
   },
 
   LoadExtern : function(){
-    initPlayer();
-    player.getData().then(_date => {
-      const myJSON = JSON.stringify(_date);
-      myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
+    initPlayer().then(() => {
+        return player.getData();
+    }).then(_date => {
+        const myJSON = JSON.stringify(_date);
+        myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
     });
-  },
+}
+
 
   
 });
