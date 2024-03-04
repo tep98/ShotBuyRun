@@ -20,7 +20,7 @@ public class Progress : MonoBehaviour
     private static extern void LoadExtern();
 
     public static Progress Instance;
-    private void Awake()
+    private void Start()
     {
         if (Instance == null)
         {
